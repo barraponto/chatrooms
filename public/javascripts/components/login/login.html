@@ -1,0 +1,12 @@
+<div class="container">
+  <form class="form-signin" ng-class="{'has-error': hasError}" ng-submit="loginCtrl.onSubmit($event)">
+    <h2 class="form-signin-heading">Enter your nickname</h1>
+    <div class="input-group">
+      <input ng-model="username"
+        type="text" class="form-control" required autofocus placeholder="{{placeholder}}">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Join!</button>
+      </span>
+    </div><!-- /input-group -->
+  </form>
+</div><!-- /container -->
