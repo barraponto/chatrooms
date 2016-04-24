@@ -9,7 +9,7 @@ angular.module('chatrooms').factory(
 angular.module('chatrooms').controller(
   'appController',
   ['$scope', 'socket', function($scope, socket){
-    $scope.$on('login', function(data){
-      socket.emit('user-login', data);
+    $scope.$on('login', function(event, data){
+      socket.emit('user:login', {username: data.username});
     });
 }]);
