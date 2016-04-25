@@ -9,7 +9,10 @@ io.on('connection', function(socket){
     if (usermanager.addUser(data.username, socket)) {
       socket.emit('user:login:success', {username: data.username});
     } else {
-      socket.emit('user:login:error', {username: data.username});
+      socket.emit(
+        'user:login:error',
+        {username: data.username,
+         error: 'Username "' + data.username + '" already in use'});
     }
   });
   socket.on('disconnect', function onDisconnect(){
