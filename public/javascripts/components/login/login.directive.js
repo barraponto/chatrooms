@@ -8,7 +8,7 @@ angular.module('chatrooms').directive(
       controller: ['$scope', function($scope){
         this.onSubmit = function($event){
           $event.preventDefault();
-          $scope.$emit('login', {username: $scope.username});
+          $scope.$emit('login:request', {username: $scope.username});
         };
         $scope.$on('login:error', function(data){
           $scope.hasError = true;
