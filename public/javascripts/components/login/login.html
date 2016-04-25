@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-hide="loggedIn">
   <form class="form-signin" ng-class="{'has-error': hasError}" ng-submit="loginCtrl.onSubmit($event)">
     <h2 class="form-signin-heading">Enter your nickname</h1>
     <div class="input-group">
@@ -8,5 +8,6 @@
         <button class="btn btn-default" type="submit">Join!</button>
       </span>
     </div><!-- /input-group -->
+    <span class="help-block">{{errorMessage}}</span>
   </form>
 </div><!-- /container -->

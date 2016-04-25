@@ -10,8 +10,12 @@ angular.module('chatrooms').directive(
           $event.preventDefault();
           $scope.$emit('login:request', {username: $scope.username});
         };
-        $scope.$on('login:error', function(data){
+        $scope.$on('login:success', function(event, data){
+          $scope.loggedIn = true;
+        });
+        $scope.$on('login:error', function(event, data){
           $scope.hasError = true;
+          $scope.errorMessage = data.error;
         });
       }],
       controllerAs: 'loginCtrl',
