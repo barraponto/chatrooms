@@ -5,6 +5,7 @@ angular.module('chatrooms').controller(
       socket.emit('user:login', {username: data.username});
     });
     socket.on('user:login:success', function(data){
+      $scope.user = {name: data.username};
       $scope.$broadcast('login:success', {username: data.username});
     });
     socket.on('user:login:error', function(data){
