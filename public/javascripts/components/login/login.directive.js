@@ -3,20 +3,14 @@ angular.module('chatrooms').directive(
   function(){
     return {
       scope: {
-        placeholder: '@placeholder'
+        placeholder: '@',
+        submit: '&',
       },
       controller: ['$scope', function($scope){
         this.onSubmit = function($event){
           $event.preventDefault();
-          $scope.$emit('login:request', {username: $scope.username});
+          $scope.submit($scope.username);
         };
-        $scope.$on('login:success', function(event, data){
-          $scope.loggedIn = true;
-        });
-        $scope.$on('login:error', function(event, data){
-          $scope.hasError = true;
-          $scope.errorMessage = data.error;
-        });
       }],
       controllerAs: 'loginCtrl',
       restrict: 'E',

@@ -8,7 +8,7 @@
   <body>
 
     <div ng-app="chatrooms" ng-controller="appController as appCtrl">
-      <login placeholder="Enter a witty nickname"></login>
+      <login placeholder="Enter a witty nickname" submit="appCtrl.loginRequest(username)"></login>
       <chat username="{{user.name}}"></chat>
     </div><!-- /[ng-app="chatrooms"] -->
 
