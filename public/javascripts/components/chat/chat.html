@@ -1,0 +1,10 @@
+<form class="form-signin" ng-submit="chatCtrl.onMessageSubmit($event)">
+  <div class="input-group">
+    <input ng-model="message"
+      type="text" class="form-control" required autofocus placeholder="Type your message here">
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="submit">Send</button>
+    </span>
+  </div><!-- /input-group -->
+  <span class="help-block">{{errorMessage}}</span>
+</form>
