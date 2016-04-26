@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{title}}</title>
+    <title>Chatrooms</title>
     <link rel='stylesheet' href='/vendor/bootstrap/dist/css/bootstrap.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    {{{body}}}
+
+    <div ng-app="chatrooms" ng-controller="appController as appCtrl">
+      <login placeholder="Enter a witty nickname"></login>
+      <chat username="{{user.name}}"></chat>
+    </div><!-- /[ng-app="chatrooms"] -->
+
     <script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
     <script src="/vendor/angular/angular.js" type="text/javascript" charset="utf-8"></script>
     <script src="/vendor/angular-socket-io/socket.js" type="text/javascript" charset="utf-8"></script>
@@ -14,5 +19,6 @@
     <script src="/javascripts/components/app/app.socket.js" type="text/javascript" charset="utf-8"></script>
     <script src="/javascripts/components/app/app.controller.js" type="text/javascript" charset="utf-8"></script>
     <script src="/javascripts/components/login/login.directive.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/javascripts/components/chat/chat.directive.js" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>
